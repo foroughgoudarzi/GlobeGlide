@@ -25,7 +25,7 @@ $("document").ready(function () {
 
     // restuarant
     // Gets city name and fetches coordinates of the city
-    function fetchCoordinates(town) {
+    function fetchRestaurantsInfo(town) {
 
         let latURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + town + "&limit=5&appid=" + openWeatherAPI;
 
