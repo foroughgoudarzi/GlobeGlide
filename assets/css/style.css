@@ -1,0 +1,11 @@
+.airport{
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    list-style: none;
+}
