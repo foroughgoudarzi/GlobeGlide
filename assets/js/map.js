@@ -1,6 +1,6 @@
-let map;
-var button = document.querySelector("#search");
-button.addEventListener("click", searchCity);
+//var button = document.querySelector("#search");
+var button = $("#search");
+button.on("click", searchCity);
 
 function initMap() {
     // Initial map options
@@ -10,13 +10,15 @@ function initMap() {
     };
 
     // New map
+    //this part does not work with Jquery
     map = new google.maps.Map(document.getElementById("map"), options);
+    
     // console.log(new google.maps)
     console.log(map)
 }
 
 function searchCity() {
-    const city = document.getElementById('cityInput').value;
+    const city = $('#cityInput').val();
     if (!city) return;
 
     // Geocode the city name
@@ -48,3 +50,5 @@ function saveSearch(city) {
 
 
 console.log("hello")
+
+
