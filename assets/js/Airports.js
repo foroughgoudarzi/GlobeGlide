@@ -1,7 +1,7 @@
 const apiKey = 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR';
 
-document.querySelector("button").addEventListener("click",function(){
-    const input = document.querySelector("input").value;
+$("#search").on("click",function(){
+    const input = $("#cityInput").val();
     const apiUrl = `https://api.api-ninjas.com/v1/airports?name=${input}`;
 
 fetch(apiUrl, {
@@ -25,21 +25,22 @@ fetch(apiUrl, {
     });
 })
 
-const display = document.querySelector('.display');
+const display = $('.display');
 function displayAirports(data) {
     if (data.length === 0) {
-        display.textContent = 'Oops! No airports found. Please search using the City name.';
+        display.text ('Oops! No airports found. Please search using the City name.');
         return; // Exit the function early since there's nothing to display
     }
 
-    display.innerHTML = ''; // Clear the display
-    const ul = document.createElement('ul');
+    // display.innerHTML = ''; // Clear the display
+    display.empty(); // Clear the display
+    const ul = $('<ul>');
     data.forEach(airport => {
-        const li = document.createElement('li');
-        li.textContent = airport.name;
-        li.classList.add('airport');
-        ul.appendChild(li);
-        display.appendChild(ul);
+        const li = $('<li>')
+       .text(airport.name)
+       .addClass('airport');
+        ul.append(li);
+        $(display).append(ul);
 
         
     });
