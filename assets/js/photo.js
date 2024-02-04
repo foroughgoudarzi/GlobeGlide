@@ -1,46 +1,62 @@
+// This script gets name of a city and place and return a photo
 $("document").ready(function () {
     var openWeatherAPI = "ffe2c4b50bca7de701389fcca1ad8a3a";
     var latitude;
     var longtitude;
-    var pointOfInterest = [];
+   var photoID;
 
-    // sort: relevance (default), rating, distance
-      // coffee, restaurant, museum, shopping center,cinema, hotel, monument
-      fetchPlaces("london", "museum", 'DISTANCE')
-
+     fetchPlaces("glasgow", "monuments", "rating")
+     // sort: popular or newest  
     // Gets city name and fetches coordinates of the city
-    function fetchPlaces(town, poi, sort) {
+   async function fetchPlaces(town, poi, sort) {
 
         let latURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + town + "&limit=5&appid=" + openWeatherAPI;
 
-        fetch(latURL)
+       await fetch(latURL)
             .then(function (response) {
                 return response.json();
             }).then(function (data) {
-                 console.log(data);
+                //  console.log(data);
                 longtitude = data[0].lon;
                 latitude = data[0].lat;
                 let latlong = latitude + "," + longtitude;
 
-                findPOI(poi, latlong, sort);
+            findPOI(poi, latlong, sort);
+                // findPhoto(photoID);
+                // console.log(photoID);
             });
+
+            
     }
 
+    
+///////////////////////////////////////////////////
+function findPhoto(fsq_id){
+const options = {method: 'GET', headers: {accept: 'application/json', Authorization: 'fsq3uGJyqb8GYslDA9kCvLI2OQWCPzUPl2HYay7NK0Lzjpw=',}};
+
+fetch(`https://api.foursquare.com/v3/places/${fsq_id}/photos`, options)
+  .then(response => response.json())
+  .then(function (data) {
+    if(data != null){
+        console.log(data)
+    var photoURL = data[0].prefix+"original"+data[0].suffix;
+    $("#image-container").append("<img class='slide' src='"+photoURL+"' alt='Image 1' width='250px'>");
+    }
+  })
+  .catch(err => console.error(err));
+
+}
 
     // ***********************
-    function findPOI(poi, latlong) {
+   async function findPOI(poi, latlong, sort) {
         placeSearch().then(
             function (data) {
-                 console.log(data);
+                // console.log(data);
                 if (data != null) {
-                    for (let i = 0; i < data.results.length && i < 3; i++) {
-                        let restaurant = {};
-                        restaurant.name = data.results[i].name;
-                        restaurant.address = data.results[i].location.formatted_address;
-                        restaurant.isOpen = data.results[i].closed_bucket;
-                        pointOfInterest[i] = restaurant;
+                       photoID = data.results[0].fsq_id;
+                    console.log(photoID);
+                    findPhoto(photoID);
 
-                    }
 
                 }
             },
@@ -54,7 +70,7 @@ $("document").ready(function () {
                     query: poi,
                     ll: latlong,
                     //   open_now: 'true',
-                    sort: 'DISTANCE'
+                    sort: sort
                 });
                 const result = await fetch(
                     `https://api.foursquare.com/v3/places/search?${searchParams}`,
@@ -73,5 +89,4 @@ $("document").ready(function () {
             }
         }
     }
-     console.log(pointOfInterest);
 });
