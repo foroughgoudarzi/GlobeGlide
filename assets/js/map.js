@@ -46,5 +46,3 @@ function saveSearch(city) {
     localStorage.setItem('citySearches', JSON.stringify(searches));
 }
 
-
-console.log("hello")
