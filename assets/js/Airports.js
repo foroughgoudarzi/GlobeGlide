@@ -1,3 +1,4 @@
+// Airports.js with JQuery
 const apiKey = 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR';
 
 $("#search").on("click",function(){
