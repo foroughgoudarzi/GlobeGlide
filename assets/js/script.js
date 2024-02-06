@@ -21,43 +21,4 @@ $("document").ready(function () {
         })
 
     // })
-
-
-    // restuarant
-    // Gets city name and fetches coordinates of the city
-    function fetchRestaurantsInfo(town) {
-
-        let latURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + town + "&limit=5&appid=" + openWeatherAPI;
-
-        fetch(latURL)
-            .then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                longtitude = data[0].lon;
-                latitude = data[0].lat;
-
-                var spoonAPI = "83b74f9ac1fb498da57d942df6e9aa7b"
-
-                var querySpoon = "https://api.spoonacular.com/food/restaurants/search?lat=" + latitude + "&lng=" + longtitude + "&apiKey=" + spoonAPI;
-
-                fetch(querySpoon)
-                    .then(function (response) {
-                        return response.json();
-                    }).then(function (data) {
-                        console.log(data);
-                        if (data != null) {
-                            for (let i = 0; i < data.length && i < 3; i++) {
-                                let address = data[i].address.street_addr;
-                                let cuisines = data[i].cuisines.toString();
-                                let today = dayjs().format('dddd');
-                                let opening = data[i].local_hours.operational[today];
-                            }
-
-                        }
-
-                    });
-
-            });
-    }
-
 });
