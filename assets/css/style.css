@@ -1,4 +1,19 @@
 
+.advert {
+  margin-left: 10%;
+  animation-name: moving-text;
+  animation-duration: 4s;
+}
+
+@keyframes moving-text {
+  from {margin-left: -30%;}
+  to {margin-left: 10%;}
+}
+
+.city {
+  max-width: 300px;
+
+
 /* styling for Airport dynamic elements */
 .airport{
     background-color: #f2f2f2;
@@ -10,4 +25,5 @@
     cursor: pointer;
     transition: 0.3s;
     list-style: none;
+
 }
