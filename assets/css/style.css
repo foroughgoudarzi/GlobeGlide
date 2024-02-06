@@ -1,0 +1,14 @@
+.advert {
+  margin-left: 10%;
+  animation-name: moving-text;
+  animation-duration: 4s;
+}
+
+@keyframes moving-text {
+  from {margin-left: -30%;}
+  to {margin-left: 10%;}
+}
+
+.city {
+  max-width: 300px;
+}

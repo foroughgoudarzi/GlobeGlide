@@ -1,45 +1,23 @@
-$("document").ready(function () {
-    var openWeatherAPI = "ffe2c4b50bca7de701389fcca1ad8a3a";
-    var latitude;
-    var longtitude;
-    var pointOfInterest = [];
+// Gets latlong (latitude + "," + longitude) of a city, a poi name and sort and returns 3 names, address and openness
+// of places
+// The poi could be: coffee, restaurant, museum, shopping center,cinema, hotel, monument
+// sort (for places): relevance (default), rating, distance
+// the return objects are saved in pointOfInterest array 
+// for all places sort would be 'DISTANCE'
 
-    // sort: relevance (default), rating, distance
-      // coffee, restaurant, museum, shopping center,cinema, hotel, monument
-      fetchPlaces("london", "museum", 'DISTANCE')
-
-    // Gets city name and fetches coordinates of the city
-    function fetchPlaces(town, poi, sort) {
-
-        let latURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + town + "&limit=5&appid=" + openWeatherAPI;
-
-        fetch(latURL)
-            .then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                 console.log(data);
-                longtitude = data[0].lon;
-                latitude = data[0].lat;
-                let latlong = latitude + "," + longtitude;
-
-                findPOI(poi, latlong, sort);
-            });
-    }
-
-
-    // ***********************
-    function findPOI(poi, latlong) {
-        placeSearch().then(
+    async function findPOI(poi, latlong, sort) {
+       await placeSearch().then(
             function (data) {
-                 console.log(data);
+                // console.log(data);
                 if (data != null) {
                     for (let i = 0; i < data.results.length && i < 3; i++) {
-                        let restaurant = {};
-                        restaurant.name = data.results[i].name;
-                        restaurant.address = data.results[i].location.formatted_address;
-                        restaurant.isOpen = data.results[i].closed_bucket;
-                        pointOfInterest[i] = restaurant;
-
+                        let place = {name: "", address: "", isOpen: "", photoId: ""};
+                        place.name = data.results[i].name;
+                        place.address = data.results[i].location.formatted_address;
+                        place.isOpen = data.results[i].closed_bucket;
+                        place.photoId = data.results[i].fsq_id;
+                        pointsOfInterest[i] = place;
+                       
                     }
 
                 }
@@ -53,8 +31,7 @@ $("document").ready(function () {
                 const searchParams = new URLSearchParams({
                     query: poi,
                     ll: latlong,
-                    //   open_now: 'true',
-                    sort: 'DISTANCE'
+                    sort: sort
                 });
                 const result = await fetch(
                     `https://api.foursquare.com/v3/places/search?${searchParams}`,
@@ -73,5 +50,4 @@ $("document").ready(function () {
             }
         }
     }
-     console.log(pointOfInterest);
-});
+    
