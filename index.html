@@ -13,10 +13,17 @@
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+
     <title>GlobalGlide</title>
+
 </head>
 
+
+//<body class="page2" style="background-image: url('./assets/images/background.jpg'); background-size: cover;">
+
 <body>
+
+
     <!-- Header -->
     <header>
         <div class="video-container">
@@ -44,12 +51,12 @@
         </div>
     </div>
 
-    <!-- cities images -->
+    <!-- cities images rounded-4 border border-info border-4 w-100 m-0 h-100-->
     <div class="col ps-0">
         <div class="images d-flex justify-content-around flex-row flex-wrap mb-2 w-100 pe-0">
             <!-- image1 -->
             <div class="city-photo d-none m-2 p-0 text-decoration-none" id="">
-                <div class="card city rounded-4 border border-info border-4 w-100 m-0 h-100">
+                <div class="card city ">
                     <img class="card-img-top rounded-3" alt="city-monument">
                     <div class="card-body">
                         <h3 class="card-title text-black"></h3>
@@ -57,9 +64,9 @@
                     </div>
                 </div>
             </div>
-            <!-- image2 -->
-            <div class="city-photo d-none m-2 p-0 text-decoration-none" id="">
-                <div class="card city rounded-4 border border-info border-4 w-100 m-0 h-100">
+            <!-- image2  rounded-4 border border-info border-4 w-100 m-0 h-100-->
+            <div class="city-photo d-none m-2 p-0 text-decoration-none " id="">
+                <div class="card city ">
                     <img class="card-img-top rounded-3" src="" alt="city-monument">
                     <div class="card-body">
                         <h3 class="card-title text-black"></h3>
@@ -70,7 +77,7 @@
             </div>
             <!-- image3 -->
             <div class="city-photo d-none m-2 p-0 text-decoration-none" id="city-photo">
-                <div class="card city rounded-4 border border-info border-4 w-100 m-0 h-100">
+                <div class="card city ">
                     <img class="card-img-top rounded-3" src="" alt="city-monument">
                     <div class="card-body">
                         <h3 class="card-title text-black"></h3>
@@ -84,11 +91,21 @@
 
 
     <!--city points of interest -->
-    <div id="city-poi" class="row mt-3">
+    <div class="" id="city-poi" class="row mt-3">
         <div class="d-none poi col-9 border border-1 border-black">
             <h2 class="title"></h2>
+
+            <select class="poi custom-select custom-select-lg mb-3" id="poiselector">
+                <option selected>Select a point of interest</option>
+                <option>Cinema</option>
+                <option>Hotel</option>
+                <option>Coffee</option>
+                <option>Restaurant</option>
+                <option>Museum</option>
+                <option>Shopping center</option>
+              </select>
         </div>
-        <div class="poi d-none col-3 border rounded-4 border-4 border-black" id="exchange-rate">
+        <div class="poi d-none col-3 " id="exchange-rate">
             <h3>Exchange Rate</h3>
             <table>
                 <tr class="row1">
@@ -128,6 +145,8 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jquery-ui -->
+    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
     <!--google map links  -->
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQhZnG76vyt0FnliqNxQa_Npqa1hrYn2c&callback=initMap">
@@ -139,7 +158,7 @@
     <script type="text/javascript" src="assets/js/currency.js"></script>
     <script type="text/javascript" src="assets/js/poi.js"></script>
     <script type="text/javascript" src="assets/js/photo.js"></script>
-    <script src="assets/js/map.js"></script>
+    <!-- <script src="assets/js/map.js"></script> -->
     <script src="assets/js/Airports.js"></script>
 </body>
 

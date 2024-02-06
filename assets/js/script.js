@@ -15,10 +15,6 @@ var photoURL;
 $("#search").click(async function () {
     country = $("#countryInput").val();
 
-    // find country ISO two letter name
-
-    //  https://api.api-ninjas.com/v1/country?name=
-
     // Fetches country currency code and 2-letter ISO name
     await findCountryInfo(country);
 
@@ -39,20 +35,16 @@ $("#search").click(async function () {
     showExchangeRate();
 
     // show cities' 
-    // $(".city-photo").removeClass("d-none")
     for (let i = 0; i < cities.length; i++) {
         let latlong = cities[i].lat + "," + cities[i].long;
         await findPOI("monument", latlong, "rating");
-        // console.log(pointsOfInterest[0].photoId)
-        // console.log(cities.length)
-        //var id = pointsOfInterest[0].n;
         await findPhoto(pointsOfInterest[0].photoId);
-        // $(".city").eq(i).prepend("<img class='card-img-top rounded-3' src='"+photoURL+"' alt='city-monument' width='250px'>");
         $(".city").eq(i).children().eq(0).attr("src", photoURL);
         $("h3").eq(i).text(cities[i].name);
     }
     $(".city-photo").removeClass("d-none")
     $("#exchange-rate").removeClass("d-none");
+    $(".poi").removeClass("d-none");
 
 
 
@@ -70,4 +62,12 @@ function showExchangeRate() {
     $("td").eq(5).text(conversionRateEUR + " " + currencyCode);
 }
 
+$("#poiselector").on("change", function(){
+   var x = document.getElementById("poiselector").value;
+   findPOI(x, latlong, 'DISTANCE') 
+
+  
+
+
+});
 
