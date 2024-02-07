@@ -8,7 +8,6 @@
     async function findPOI(poi, latlong, sort) {
        await placeSearch().then(
             function (data) {
-                // console.log(data);
                 if (data != null) {
                     for (let i = 0; i < data.results.length && i < 3; i++) {
                         let place = {name: "", address: "", isOpen: "", photoId: ""};

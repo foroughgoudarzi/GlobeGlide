@@ -37,7 +37,6 @@ function displayAirports(data) {
     const heading = $('<h2>')
     .addClass('heading')
    
-    // display.innerHTML = ''; // Clear the display
     display.empty(); // Clear the display
    
     const ul = $('<ul>');
