@@ -11,7 +11,6 @@ function initMap() {
 
     // New map
     map = new google.maps.Map(document.getElementById("map"), options);
-    // console.log(new google.maps)
     console.log(map)
 }
 
