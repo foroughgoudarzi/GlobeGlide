@@ -1,4 +1,3 @@
-
 var country;
 var cities = [];
 var city;
@@ -10,8 +9,6 @@ var conversionRateEUR;
 var pointsOfInterest = [];
 var photoURL;
 
-
-
 $("#search").click(async function () {
     country = $("#countryInput").val();
 
@@ -20,16 +17,11 @@ $("#search").click(async function () {
 
     // Fetches the name of 3 cities and their coordinates
     await findCities(countryISO2);
-    //console.log(cities[0].name)
 
     // Fetches exchange rate
     await findExchangeRate(currencyCode, "GBP");
     await findExchangeRate(currencyCode, "USD");
     await findExchangeRate(currencyCode, "EUR");
-
-    // remove background image and paragraph
-    $("body").css("background-image", "none");
-    $(".advert").addClass("d-none");
 
     // showExchangeRate();
     showExchangeRate();
@@ -46,7 +38,7 @@ $("#search").click(async function () {
     $("#exchange-rate").removeClass("d-none");
     $(".poi").removeClass("d-none");
 
-
+    $("#poiselector").addClass("d-none");
 
 })
 
@@ -62,12 +54,26 @@ function showExchangeRate() {
     $("td").eq(5).text(conversionRateEUR + " " + currencyCode);
 }
 
-$("#poiselector").on("change", function(){
-   var x = document.getElementById("poiselector").value;
-   findPOI(x, latlong, 'DISTANCE') 
+$("#poiselector").on("change", async function () {
+    var x = document.getElementById("poiselector").value;
+    let index = cities.findIndex(elm=> elm.name ==city);
+    const coord = cities[index].lat + "," + cities[index].long;
 
-  
+   await findPOI(x, coord, 'DISTANCE');
+   
+    $(".poi-address").children( ".poi-par" ).remove();
 
+    for (let i = 0; i < 3 && i < pointsOfInterest.length; i++) {
+      console.log(pointsOfInterest)
+        $(".poi-address").append("<p class='ms-2 poi-par'><span>name: </span>" + pointsOfInterest[i].name + ", <span>address: </span>" + pointsOfInterest[i].address + ", <span>isOpen: </span>" + pointsOfInterest[i].isOpen+"</p>");
+    }
 
 });
 
+$(".city").click(function () {
+    $(".poi-address").children( ".poi-par" ).remove();
+    city = $(this).children().eq(1).children().eq(0).text();
+    $(".city-name").text(city);
+    $("#poiselector").removeClass("d-none");
+
+})
