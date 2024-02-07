@@ -1,6 +1,8 @@
 // Airports.js with JQuery
 const apiKey = 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR';
 
+
+//when button is clicked, get the value of the input and use it to search for the airport
 $("#search").on("click",function(){
     const input = $("#countryInput").val();
     const apiUrl = `https://api.api-ninjas.com/v1/airports?name=${input}`;
@@ -25,7 +27,7 @@ fetch(apiUrl, {
         console.error('There was a problem with your fetch operation:', error);
     });
 })
-
+//display the airports
 const display = $('.display');
 function displayAirports(data) {
     if (data.length === 0) {
