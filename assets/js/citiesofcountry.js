@@ -1,9 +1,8 @@
-const options = { method: 'GET', headers: { 'X-Api-Key': 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR' }, };
+const options = { method: 'GET', headers: { 'X-Api-Key': 'SR2wlRcZPkZCKvpyefr52Q==oHUSXj6y8txxVQ33' }, };
 async function findCountryInfo(country) {
-    
+      
     const countryURL = "https://api.api-ninjas.com/v1/country?name=" + country;
 
-   
     
     await fetch(countryURL, options)
         .then(function (response) {
