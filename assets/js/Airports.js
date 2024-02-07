@@ -32,15 +32,20 @@ function displayAirports(data) {
         display.text ('Oops! No airports found. Please search using the City name.');
         return; // Exit the function early since there's nothing to display
     }
-
+    const heading = $('<h2>')
+    .addClass('heading')
+   
     // display.innerHTML = ''; // Clear the display
     display.empty(); // Clear the display
+   
     const ul = $('<ul>');
     data.forEach(airport => {
+        heading.text('Airports');
         const li = $('<li>')
        .text(airport.name)
        .addClass('airport');
         ul.append(li);
+        display.append(heading);
         $(display).append(ul);
 
         
