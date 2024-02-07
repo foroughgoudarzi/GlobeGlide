@@ -9,6 +9,7 @@ The following Web APIs have been used to fetch data.
 1. [API Ninjas](https://api-ninjas.com/): By utilizing the country's currency code obtained from API Ninjas, ExchangeRate-API provides exchange rates against major currencies like "GBP," "USD," and "EUR."
 
 2. [ExchangeRate-API](https://www.exchangerate-api.com/): Using the fetched country currency code, three query is made to Exchange-Rate API to optain exchange rate to "GBP", "USD" and "EUR".
+2. [ExchangeRate-API](https://www.exchangerate-api.com/): Using the fetched country currency code, three query is made to Exchange-Rate API to optain exchange rate to "GBP", "USD" and "EUR".
 
 3. [FOURSQUARE Places API](https://location.foursquare.com/developer/reference/places-api-overview):  Using city coordinates obtained earlier, this API retrieves points of interest, such as monuments, along with their photo codes (`fsq_id`). Then with this code, the application fetches the respective photo URLs.
 
