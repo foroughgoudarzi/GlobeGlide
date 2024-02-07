@@ -2,7 +2,7 @@
    async function findExchangeRate(targetCurrency, baseCurrency){
     var apiURL = " https://v6.exchangerate-api.com/v6/";
     // Sample url format https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP
-    var key = "da71ae6c9f13b9863cd3010f";
+    var key = "d4707b17e4b886f84b0feae4";
     // baseCurrency=$('#search-input1').val();
     //targetCurrency=$('#search-input1').val();
   
