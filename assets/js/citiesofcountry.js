@@ -1,7 +1,7 @@
-// var country = 'GB'
-const options = { method: 'GET', headers: { 'X-Api-Key': 'gIwyTkDqoA75tjYxtQ6Ekg==gRZqiF97MWDqvyrH' }, };
+// var country = 'GB' oldapi= 'gIwyTkDqoA75tjYxtQ6Ekg==gRZqiF97MWDqvyrH'
+const options = { method: 'GET', headers: { 'X-Api-Key': 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR' }, };
 async function findCountryInfo(country) {
-
+    
     const countryURL = "https://api.api-ninjas.com/v1/country?name=" + country;
 
    
