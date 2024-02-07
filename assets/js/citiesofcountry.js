@@ -1,4 +1,3 @@
-// var country = 'GB' oldapi= 'gIwyTkDqoA75tjYxtQ6Ekg==gRZqiF97MWDqvyrH'
 const options = { method: 'GET', headers: { 'X-Api-Key': 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR' }, };
 async function findCountryInfo(country) {
     
@@ -10,12 +9,9 @@ async function findCountryInfo(country) {
         .then(function (response) {
             return response.json();
         }).then(function (data) {
-        //    console.log(data)
             currencyCode = data[0].currency.code;
 
            countryISO2 = data[0].iso2;
-          // return [currency, countryISO];
-          // 
         });
     }
 
@@ -38,8 +34,4 @@ async function findCountryInfo(country) {
                     
 
                 });
-      
-        //         var info = [cities, currency];
-        //         return info;
-    
 }
