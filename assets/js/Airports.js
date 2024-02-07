@@ -1,5 +1,6 @@
-
+// myapi key
 const apiKey = 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR';
+//search for the airports
 $("#search").on("click",function(){
     const input = $("#countryInput").val();
     const apiUrl = `https://api.api-ninjas.com/v1/airports?name=${input}`;
