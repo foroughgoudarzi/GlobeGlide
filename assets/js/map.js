@@ -1,6 +1,6 @@
 let map;
 var button = $("#search");
-button.on("click", searchCity);
+// button.on("click", searchCity);
 
 function initMap() {
     // Initial map options
@@ -16,7 +16,7 @@ function initMap() {
 }
 
 function searchCity() {
-    const city = document.getElementById('countryInput').value;
+    // const city = document.getElementById('countryInput').value;
     if (!city) return;
 
     // Geocode the city name

@@ -44,9 +44,11 @@ $("#search").click(async function () {
     $(".city-name").addClass("d-none");
     $(".poi-address").addClass("d-none");
     $(".poi-container").addClass("d-none");
+   
 
      // showExchangeRate();
      showExchangeRate();
+     $("#map").removeClass("d-none");
 
 })
 
@@ -64,7 +66,7 @@ function showExchangeRate() {
 
 $("#poiselector").on("change", async function () {
     var x = document.getElementById("poiselector").value;
-    if(x != "Select a point of interest"){
+    if(x != "Select a point of interest" && x!= "Map"){
     let index = cities.findIndex(elm=> elm.name ==city);
     const coord = cities[index].lat + "," + cities[index].long;
 
@@ -77,6 +79,10 @@ $("#poiselector").on("change", async function () {
         $(".poi-address").append("<p class='ms-2 poi-par'><span>name: </span>" + pointsOfInterest[i].name + ", <span>address: </span>" + pointsOfInterest[i].address + ", <span>isOpen: </span>" + pointsOfInterest[i].isOpen+"</p>");
     }
     $(".poi-address").removeClass("d-none");
+} else if (x == "Map"){
+    // to map code
+    searchCity();
+    
 } else {
     $(".poi-address").addClass("d-none");
 }
