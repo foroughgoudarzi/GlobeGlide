@@ -11,6 +11,8 @@ var photoURL;
 
 $("#search").click(async function () {
     country = $("#countryInput").val();
+    $("#country-info").addClass("d-none");
+    $(".city-photo").addClass("d-none");
 
     // Fetches country currency code and 2-letter ISO name
     await findCountryInfo(country);
@@ -19,12 +21,11 @@ $("#search").click(async function () {
     await findCities(countryISO2);
 
     // Fetches exchange rate
-    await findExchangeRate(currencyCode, "GBP");
-    await findExchangeRate(currencyCode, "USD");
-    await findExchangeRate(currencyCode, "EUR");
+    findExchangeRate(currencyCode, "GBP");
+    findExchangeRate(currencyCode, "USD");
+    findExchangeRate(currencyCode, "EUR");
 
-    // showExchangeRate();
-    showExchangeRate();
+   
 
     // show cities' 
     for (let i = 0; i < cities.length; i++) {
@@ -34,11 +35,18 @@ $("#search").click(async function () {
         $(".city").eq(i).children().eq(0).attr("src", photoURL);
         $("h3").eq(i).text(cities[i].name);
     }
-    $(".city-photo").removeClass("d-none")
+    $(".city-photo").removeClass("d-none");
     $("#exchange-rate").removeClass("d-none");
     $(".poi").removeClass("d-none");
+    $("#country-info").removeClass("d-none");
 
     $("#poiselector").addClass("d-none");
+    $(".city-name").addClass("d-none");
+    $(".poi-address").addClass("d-none");
+    $(".poi-container").addClass("d-none");
+
+     // showExchangeRate();
+     showExchangeRate();
 
 })
 
@@ -56,10 +64,11 @@ function showExchangeRate() {
 
 $("#poiselector").on("change", async function () {
     var x = document.getElementById("poiselector").value;
+    if(x != "Select a point of interest"){
     let index = cities.findIndex(elm=> elm.name ==city);
     const coord = cities[index].lat + "," + cities[index].long;
 
-   await findPOI(x, coord, 'DISTANCE');
+   await findPOI(x, coord, 'relevance');
    
     $(".poi-address").children( ".poi-par" ).remove();
 
@@ -67,7 +76,11 @@ $("#poiselector").on("change", async function () {
       console.log(pointsOfInterest)
         $(".poi-address").append("<p class='ms-2 poi-par'><span>name: </span>" + pointsOfInterest[i].name + ", <span>address: </span>" + pointsOfInterest[i].address + ", <span>isOpen: </span>" + pointsOfInterest[i].isOpen+"</p>");
     }
-
+    $(".poi-address").removeClass("d-none");
+} else {
+    $(".poi-address").addClass("d-none");
+}
+    
 });
 
 $(".city").click(function () {
@@ -75,5 +88,6 @@ $(".city").click(function () {
     city = $(this).children().eq(1).children().eq(0).text();
     $(".city-name").text(city);
     $("#poiselector").removeClass("d-none");
-
+    $(".city-name").removeClass("d-none");
+    $(".poi-container").removeClass("d-none");
 })
