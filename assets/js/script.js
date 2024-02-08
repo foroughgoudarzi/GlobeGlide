@@ -44,29 +44,36 @@ $("#search").click(async function () {
     $(".city-name").addClass("d-none");
     $(".poi-address").addClass("d-none");
     $(".poi-container").addClass("d-none");
-   
 
      // showExchangeRate();
      showExchangeRate();
-     $("#map").removeClass("d-none");
 
 })
 
 
 function showExchangeRate() {
 
+ //Updated the Exchange rate display text   
+    $("td").eq(0).html("<img id='countryicon' src='./assets/images/imgGBP.png' alt='UK Currency Image'><span>GBP &nbsp; --> &nbsp; </span> ");
+    $("td").eq(1).html(conversionRateGBP + " &nbsp  " + currencyCode);
 
-    $("td").eq(0).text("1 GBP <---> ");
-    $("td").eq(1).text(conversionRateGBP + " " + currencyCode);
-    $("td").eq(2).text("1 USD <---> ");
-    $("td").eq(3).text(conversionRateUSD + " " + currencyCode);
-    $("td").eq(4).text("1 EUR <---> ");
-    $("td").eq(5).text(conversionRateEUR + " " + currencyCode);
+    $("td").eq(2).html("<img id='countryicon'  src='./assets/images/imgUS.png' alt='US Currency Image'><span>USD &nbsp; -->&nbsp; </span> ");
+    $("td").eq(3).html(conversionRateUSD + " &nbsp  " + currencyCode);
+    
+    $("td").eq(4).html("<img id='countryicon'  src='./assets/images/imgEUR.png'alt='Euro Currency Image'><span>EUR  &nbsp; -->&nbsp; </span>");
+    $("td").eq(5).html(conversionRateEUR + " &nbsp " + currencyCode);
 }
+// Added for default view in city details
+$("#poiselector").ready(function () {
+   $('.poistlye').html('<span id="citydefault">Discover the wonders of your chosen city effortlessly by simply clicking on it.'+ '<br>'+
+                 'We are here to reveal the hidden gems and must-visit places, ensuring your trip is not only memorable but also stress-free.'+ '<br>'+
+            'Let us guide you to create an unforgettable journey filled with remarkable experiences and delightful moments.</span>');
+})
 
 $("#poiselector").on("change", async function () {
+    debugger;
     var x = document.getElementById("poiselector").value;
-    if(x != "Select a point of interest" && x!= "Map"){
+    if(x != "Select a point of interest"){
     let index = cities.findIndex(elm=> elm.name ==city);
     const coord = cities[index].lat + "," + cities[index].long;
 
@@ -76,13 +83,9 @@ $("#poiselector").on("change", async function () {
 
     for (let i = 0; i < 3 && i < pointsOfInterest.length; i++) {
       console.log(pointsOfInterest)
-        $(".poi-address").append("<p class='ms-2 poi-par'><span>name: </span>" + pointsOfInterest[i].name + ", <span>address: </span>" + pointsOfInterest[i].address + ", <span>isOpen: </span>" + pointsOfInterest[i].isOpen+"</p>");
+        $(".poi-address").append("<p class='ms-2 poi-par'><span>Name: </span>" + pointsOfInterest[i].name + ",<br> <span>Address: </span>" + pointsOfInterest[i].address + ",<br> <span>Status: </span>" + pointsOfInterest[i].isOpen+"</p>");
     }
     $(".poi-address").removeClass("d-none");
-} else if (x == "Map"){
-    // to map code
-    searchCity();
-    
 } else {
     $(".poi-address").addClass("d-none");
 }

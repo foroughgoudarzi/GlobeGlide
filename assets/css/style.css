@@ -65,16 +65,17 @@ video{
 
 /* styling for Airport dynamic elements */
 .airport{
-  background-color: #1583bd;
+  background-color: #00d062;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #a6bbc4;
+  box-shadow: 0 0 10px #bef4d7;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
   list-style: none;
   color: white;
+  
 }
 .heading{
   font-size: 30px;
@@ -84,56 +85,118 @@ video{
 }
 #map {
   height: 400px;
-  width: 100%;
+  width: 97%;
+  position: relative; /* issue 49 changes */
+  top:620px;
+  left:30px;
+  padding: 10px;
+  margin: 10px;
 }
 
-/* issue 20 changes */
-h1{
-  font-weight: 300;
-  font-style: italic;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+/* issue 49 changes */
+.city{
+  box-shadow: 0 4px 8px 0 rgba(47, 41, 41, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: auto;
+  height: auto;
 }
-.page2{
-background: #E4E4EE;
-background: -moz-linear-gradient(top, #E4E4EE 0%, #236B9D 46%, #28A2D0 100%);
-background: -webkit-linear-gradient(top, #E4E4EE 0%, #236B9D 46%, #28A2D0 100%);
-background: linear-gradient(to bottom, #E4E4EE 0%, #236B9D 46%, #28A2D0 100%);
-  }
+
 .city-photo{
   width: 30%;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  top:30px;
+  left:30px;
 }
-
 .city {
-  max-width: 100%;
-  height: auto;
-  display: block;
-
+  width: 100%; 
+  height: 530px;
+  position: absolute;
 }
 .card-img-top{
-width: 100%; 
-height: 500px; 
-object-fit: cover;
-transform: scale(0.8) translate(0, 5%);
-object-position: 50% 50%; 
-padding:10px;
-margin:10px;
+  width: 100%; 
+  height: 450px; 
+  object-fit: cover;
+  position: absolute;
 }
 .card-title{
   text-align: center;
+  position: absolute;
+  top:88%;
+  left:40%;
 }
-.poi {
+.country-info{
+  width: auto;
+  height: auto;
+  position: absolute;
+  background-color: #00d062;
+}
+.poi{
   border-style: none;
-  /* width: auto; */
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 30px;
-  margin: 20px 10px 20px 10px ; 
- 
+  margin: 20px 10px 20px 10px ;
+  height:300px;
 }
+#exchange-rate {
+  position: relative;
+  top: 550px;
+  left: 50px;
+  width:300px;
+}
+.poistlye{
+  position: relative;
+  top: 550px;
+  left: 40px;
+  background-color: White;
+  width: 1160px;
+  font-size: 20px;
+}
+.input-group{
+  box-shadow:  0 0 10px #bef4d7;
+  gap: 5px;
+}
+.input-group>::placeholder {
+  color:#bef4d7;
+}
+.poioption{
+  position: relative;
+  left: 45px;
+  width: 100px;
+  height: auto;
+}
+#poiselector{
+  width: auto;
+  height: auto;
+  left: -40px;
+  position: relative;
 
+}
+.poi-address{
+  left: 200px;
+  position: relative;
+  top: -70px;
+}
 span {
-  color:crimson;
+  color:black;
+  font-weight:bold;
+  font-size: 15px;
+}
+#citydefault{
+  font-style: italic;
+  font-size: 25px;
+}
+#countryicon{
+  width: 20px;
+  height: 20px;
+}
+.display{
+   /*change 49*/
+   position: relative;
+   top: 580px;
+   left: 50px;
+   width: 97%;
+   display: flex;
+   flex-direction: column;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

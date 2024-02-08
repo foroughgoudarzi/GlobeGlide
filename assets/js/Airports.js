@@ -41,7 +41,7 @@ display.empty(); // Clear the display
 
 const ul = $('<ul>');
 data.forEach(airport => {
-heading.text('Airports');
+heading.html('Airports <br>');
 const li = $('<li>').text(airport.name).addClass('airport');
 ul.append(li);
 }
