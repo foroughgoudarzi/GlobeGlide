@@ -28,16 +28,9 @@ function searchCity() {
                 position: results[0].geometry.location
             });
 
-            // Save the search in local storage
-            saveSearch(city);
         } else {
             console.log('Geocode was not successful for the following reason: ' + status);
         }
     });
 }
 
-function saveSearch(city) {
-    let searches = JSON.parse(localStorage.getItem('citySearches')) || [];
-    searches.push(city);
-    localStorage.setItem('citySearches', JSON.stringify(searches));
-}

@@ -59,7 +59,7 @@ video {
   animation: slide-and-fade-in 1.7s forwards;
   /* Apply the animation */
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow: 2px 2px 3px black;
 }
 
@@ -118,7 +118,7 @@ video {
 }
 
 .city-photo {
-  width: 30%;
+  width: 30%; */
   background-color: white;
   position: relative;
   top: 30px;
@@ -227,4 +227,22 @@ video {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 1024px) {
+  .card-title, #citydefault, .advert {
+      font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .card-title, #citydefault, .advert, .video-text {
+      font-size: small;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .video-text {
+      font-size: 70px;
+  }
 }
