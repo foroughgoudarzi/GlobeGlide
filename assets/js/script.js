@@ -42,7 +42,6 @@ $("#search").click(async function () {
     $("#poiselector").addClass("d-none");
     $(".city-name").addClass("d-none");
     $(".poi-address").addClass("d-none");
-    $(".poi-container").addClass("d-none");
     $("#citydefault").removeClass("d-none");
 
     showExchangeRate();
@@ -95,7 +94,6 @@ $(".city").click(function () {
     $(".city-name").text(city);
     $("#poiselector").removeClass("d-none");
     $(".city-name").removeClass("d-none");
-    $(".poi-container").removeClass("d-none");
     $('#poiselector').get(0).selectedIndex = 0;
     $("#map").addClass("d-none");
     $("#citydefault").addClass("d-none");
