@@ -172,8 +172,19 @@ video{
   position: relative;
   top: -70px;
 }
-span {
+#span-poi {
   color:black;
   font-weight:bold;
   font-size: 15px;
+}
+#exchange-rate {
+  position: relative;
+  top: 550px;
+  left: 50px;
+  width:300px;
+}
+
+#countryicon{
+  width: 20px;
+  height: 20px;
 }
