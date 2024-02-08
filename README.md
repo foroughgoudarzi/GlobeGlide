@@ -17,7 +17,7 @@ The following Web APIs have been used to fetch data.
 The following figure shows a screenshot of the working API.
 
 <figure>
-<img src="./assets/images/globeglide-app.png" width="500">
+<img src="./Assets/images/globeglide-app.png" width="500">
 <figcaption><em>Figure.1. GlobeGlide application</em></figcaption>
 </figure>
 
