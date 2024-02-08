@@ -1,4 +1,5 @@
 var country;
+var countries = [];
 var cities = [];
 var city;
 var currencyCode;
@@ -9,15 +10,30 @@ var conversionRateEUR;
 var pointsOfInterest = [];
 var photoURL;
 
+// Fetch local storage
+let countryLog = JSON.parse(localStorage.getItem("countries"));
+
 // Event listener and function for search button
 $("#search").click(async function () {
     country = $("#countryInput").val();
     $("#country-info").addClass("d-none");
     $(".city-photo").addClass("d-none");
 
-    // Fetches country currency code and 2-letter ISO name
-    await findCountryInfo(country);
+    // Checks if already the country exist in the local storage
+    if (countryLog != null) {
+        if (countryLog.length > 0) {
+            const index = countryLog.findIndex(elm => elm.name.toUpperCase() == country.toUpperCase());
+            if (index > -1) {
+                currencyCode = countryLog[index].currency;
+                countryISO2 = countryLog[index].iso;
+            } else {
 
+                // Fetches country currency code and 2-letter ISO name
+                await findCountryInfo(country);
+                updateSearchLog();
+            }
+        }
+    }
     // Fetches the name of 3 cities and their coordinates
     await findCities(countryISO2);
 
@@ -98,3 +114,24 @@ $(".city").click(function () {
     $("#map").addClass("d-none");
     $("#citydefault").addClass("d-none");
 })
+
+// Updates local storage after each new query
+function updateSearchLog() {
+    let newCountry = { name: country, iso: countryISO2, currency: currencyCode };
+    let countryLog = JSON.parse(localStorage.getItem("countries"));
+    if (countryLog == null) {
+        countries[0] = newCountry;
+    } else {
+        countries = countryLog;
+        let index = countries.findIndex(element => (element.name).toUpperCase() == country.toUpperCase());
+        if (index < 0) {
+            for (let i = countries.length - 1; i >= 0; i--) {
+                if (i < 10) countries[i + 1] = countries[i];
+            }
+            countries[0] = newCountry;
+        }
+    }
+
+    localStorage.setItem("countries", JSON.stringify(countries));
+}
+// ************************* 
