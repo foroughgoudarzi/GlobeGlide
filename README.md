@@ -27,7 +27,7 @@ The following figure shows a screenshot of the working API.
 1. The user inputs a country name and initiates the search.
 2. GlobeGlide displays names of three popular cities within the selected country and presents the exchange rates for its currency.
 3. Clicking on a city image reveals a dropdown menu, allowing users to select points of interest and view corresponding information as well as the city map.
-4. The application stores the information (name, two-letter ISO code and three-letter currency code) of the last ten countries in the local storage for quicker information retrieval.
+4. The application stores the information (name, two-letter ISO code and three-letter currency code) of the last ten searched countries in the local storage for quicker information retrieval.
 
 ## Installation
 
