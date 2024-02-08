@@ -89,12 +89,6 @@ video {
   transition: 0.3s;
   list-style: none;
   color: white;
-  /*change 49*/
-  position: relative;
-  top: 550px;
-  left: 50px;
-  width: 90%;
-  display: flex;
 }
 
 .heading {
@@ -179,7 +173,9 @@ video {
   box-shadow: 0 0 10px #bef4d7;
   gap: 5px;
 }
-
+.input-group>::placeholder {
+  color:#bef4d7;
+}
 .poioption {
   position: relative;
   left: 45px;
@@ -222,4 +218,13 @@ video {
 #citydefault{
   font-style: italic;
   font-size: 25px;
+}
+.air{
+  position: relative;
+  top: 600px;
+  left: 50px;
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
