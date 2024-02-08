@@ -9,6 +9,7 @@ var conversionRateEUR;
 var pointsOfInterest = [];
 var photoURL;
 
+// Event listener and function for search button
 $("#search").click(async function () {
     country = $("#countryInput").val();
     $("#country-info").addClass("d-none");
@@ -21,9 +22,9 @@ $("#search").click(async function () {
     await findCities(countryISO2);
 
     // Fetches exchange rate
-    // findExchangeRate(currencyCode, "GBP");
-    // findExchangeRate(currencyCode, "USD");
-    // findExchangeRate(currencyCode, "EUR");
+    findExchangeRate(currencyCode, "GBP");
+    findExchangeRate(currencyCode, "USD");
+    findExchangeRate(currencyCode, "EUR");
 
     // show cities' 
     for (let i = 0; i < cities.length; i++) {
@@ -42,14 +43,13 @@ $("#search").click(async function () {
     $(".city-name").addClass("d-none");
     $(".poi-address").addClass("d-none");
     $(".poi-container").addClass("d-none");
+    $("#citydefault").removeClass("d-none");
 
-    // showExchangeRate();
     showExchangeRate();
 })
 
 
 function showExchangeRate() {
-
 
     //Updates the Exchange rate display text   
     $("td").eq(0).html("<img id='countryicon' src='./assets/images/imgGBP.png' alt='UK Currency Image'><span> GBP &nbsp; --> &nbsp; </span> ");
@@ -88,6 +88,7 @@ $("#poiselector").on("change", async function () {
 
 });
 
+// Event listener and function for city click
 $(".city").click(function () {
     $(".poi-address").children(".poi-par").remove();
     city = $(this).children().eq(1).children().eq(0).text();
@@ -97,4 +98,5 @@ $(".city").click(function () {
     $(".poi-container").removeClass("d-none");
     $('#poiselector').get(0).selectedIndex = 0;
     $("#map").addClass("d-none");
+    $("#citydefault").addClass("d-none");
 })

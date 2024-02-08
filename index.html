@@ -8,7 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="icon" type="image/webp" href="assets/images/fav.webp">
+    <link rel="icon" type="image/webp" href="assets/images/fav.webp">
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>GlobalGlide</title>
@@ -36,7 +36,7 @@
         <div class="row justify-content-center mb-2" style="margin-bottom:3cm;">
             <div class="col-12 col-md-6">
                 <div class="input-group ">
-                    <input  type="text" placeholder="Search for a country..." id="countryInput" class="form-control">
+                    <input type="text" placeholder="Search for a country..." id="countryInput" class="form-control">
                     <div class="input-group-append">
                         <button id="search" class="btn btn-outline-success">Search</button>
                     </div>
@@ -45,8 +45,8 @@
         </div>
     </div>
 
-    <!-- cities images rounded-4 border border-info border-4 w-100 m-0 h-100-->
-    <div class="col ps-0">
+    <!-- cities -->
+    <div class="ps-0">
         <div class="images d-flex justify-content-around flex-row flex-wrap mb-2 w-100 pe-0 ">
             <!-- image1 -->
             <div class="city-photo d-none m-2 p-0 text-decoration-none" id="">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <!-- image2  rounded-4 border border-info border-4 w-100 m-0 h-100-->
+            <!-- image2 -->
             <div class="city-photo d-none m-2 p-0 text-decoration-none " id="">
                 <div class="card city ">
                     <img class="card-img-top rounded-3" src="" alt="city-monument">
@@ -107,6 +107,10 @@
         <!-- Point of interests -->
         <div class="d-none col poi poistlye">
             <h2 class="city-name"></h2>
+            <p id="citydefault">Discover the wonders of your chosen city effortlessly by simply clicking on it. <br>
+                We are here to reveal the hidden gems and must-visit places, ensuring your trip is not only memorable but also stress-free.<br>
+           Let us guide you to create an unforgettable journey filled with remarkable experiences and delightful moments.</p>
+
             <div class="row p-0 me-1">
                 <!-- Point of interests selector -->
                 <div class="col-4 poioption">
@@ -119,7 +123,7 @@
                         <option>Museum</option>
                         <option>Map</option>
                     </select>
-                  
+
                 </div>
                 <!-- Point of interest display -->
                 <div class="col poi-address m-2">
@@ -130,7 +134,7 @@
     </div>
 
     <!-- Airports -->
-    <div class=" display"></div>
+    <div class="air"></div>
     <!-- map -->
     <div class="d-none" id="map"></div>
 
