@@ -76,7 +76,7 @@ $("#poiselector").on("change", async function () {
 
     for (let i = 0; i < 3 && i < pointsOfInterest.length; i++) {
       console.log(pointsOfInterest)
-        $(".poi-address").append("<p class='ms-2 poi-par'><span>name: </span>" + pointsOfInterest[i].name + ", <span>address: </span>" + pointsOfInterest[i].address + ", <span>isOpen: </span>" + pointsOfInterest[i].isOpen+"</p>");
+        $(".poi-address").append("<p class='ms-2 poi-par'><span>Name: </span>" + pointsOfInterest[i].name + ",<br> <span>Address: </span>" + pointsOfInterest[i].address + ",<br> <span>Status: </span>" + pointsOfInterest[i].isOpen+"</p>");
     }
     $(".poi-address").removeClass("d-none");
 } else if (x == "Map"){
