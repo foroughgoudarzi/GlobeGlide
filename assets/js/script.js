@@ -18,6 +18,7 @@ $("#search").click(async function () {
     country = $("#countryInput").val();
     $("#country-info").addClass("d-none");
     $(".city-photo").addClass("d-none");
+    $("#map").addClass("d-none");
 
     // Checks if already the country exist in the local storage
     if (countryLog != null) {
