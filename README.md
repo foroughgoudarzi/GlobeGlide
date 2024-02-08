@@ -6,12 +6,11 @@ The [GlobeGlide](https://foroughgoudarzi.github.io/GlobeGlide/) application is d
 
 The following Web APIs have been used to fetch data.
 
-1. [API Ninjas](https://api-ninjas.com/): By utilizing the country's currency code obtained from API Ninjas, ExchangeRate-API provides exchange rates against major currencies like "GBP," "USD," and "EUR."
+1. [API Ninjas](https://api-ninjas.com/): Using a country name, the country two-letter ISO code and the three-letter currency code is fetched from API Ninjas. Then by utilizing the country's two-letter ISO code, three popular cities in the country and their coordinates are fetched from API Ninjas.
 
-2. [ExchangeRate-API](https://www.exchangerate-api.com/): Using the fetched country currency code, three query is made to Exchange-Rate API to optain exchange rate to "GBP", "USD" and "EUR".
-2. [ExchangeRate-API](https://www.exchangerate-api.com/): Using the fetched country currency code, three query is made to Exchange-Rate API to optain exchange rate to "GBP", "USD" and "EUR".
+2. [ExchangeRate-API](https://www.exchangerate-api.com/): Using the fetched country currency code obtained from API Ninjas, three query is made to Exchange-Rate API to optain exchange rate to "GBP", "USD" and "EUR".
 
-3. [FOURSQUARE Places API](https://location.foursquare.com/developer/reference/places-api-overview):  Using city coordinates obtained earlier, this API retrieves points of interest, such as monuments, along with their photo codes (`fsq_id`). Then with this code, the application fetches the respective photo URLs.
+3. [FOURSQUARE Places API](https://location.foursquare.com/developer/reference/places-api-overview):  Using city coordinates obtained earlier, this API retrieves points of interest, such as monuments, hotels, etc along with their photo codes (`fsq_id`). Then with this code, the application fetches the respective photo URLs.
 
 4. [Google Maps Geocoder API](https://developers.google.com/maps/documentation/javascript/reference/geocoder): This API facilitates the retrieval of city maps to enhance the user experience.
 
