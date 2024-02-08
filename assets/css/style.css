@@ -85,7 +85,6 @@ video {
   border-radius: 10px;
   box-shadow: 0 0 10px #bef4d7;
   text-align: center;
-  /* cursor: pointer; */
   transition: 0.3s;
   list-style: none;
   color: white;
@@ -125,9 +124,9 @@ video {
   left: 20px;
 }
 
-.city-photo:hover {
-    box-shadow: 20px 30px 40px 20px rgba(28, 131, 169, 0.6),
-    0px 45px 26px 0px rgba(62, 36, 166, 0.14);
+.city:hover {
+    box-shadow: 5px 10px 10px 0px rgba(27, 154, 63, 0.6),
+    0px 10px 10px 0px rgba(62, 36, 166, 0.14);
 }
 
 
