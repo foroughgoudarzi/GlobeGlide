@@ -2,7 +2,7 @@
 async function findExchangeRate(targetCurrency, baseCurrency) {
     var apiURL = " https://v6.exchangerate-api.com/v6/";
     // Sample url format https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP
-    var key = "2b04e40af60f7fe4942e1caa";
+    var key = "3af6029fde683756620f3e95";
 
     var queryURL = apiURL + key + "/pair/" + baseCurrency + "/" + targetCurrency;
     await fetch(queryURL)

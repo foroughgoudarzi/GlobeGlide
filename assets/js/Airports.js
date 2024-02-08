@@ -1,6 +1,6 @@
 
 //display the airports
-const apiKey = 'fw6Ec/tBH67tz+XBdZT+IQ==FDEDGvclxL3GK3HR';
+const apiKey = 'JkRzOdWS88sdJ44M8D6Gjw==9fqw1R8cScx9KkZo';
 $("#search").on("click", function () {
     const input = $("#countryInput").val();
     const apiUrl = `https://api.api-ninjas.com/v1/airports?name=${input}`;
