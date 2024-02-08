@@ -32,8 +32,11 @@ $("#search").on("click", function () {
 const display = $('.air');
 function displayAirports(data) {
     if (data.length === 0) {
+        $(".air").addClass("d-none");
         return; // Exit the function early since there's nothing to display
+       
     }
+    $(".air").removeClass("d-none");
     const heading = $('<h2>').addClass('heading');
     display.empty(); // Clear the display
 

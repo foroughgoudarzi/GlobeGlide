@@ -85,7 +85,7 @@ video {
   border-radius: 10px;
   box-shadow: 0 0 10px #bef4d7;
   text-align: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: 0.3s;
   list-style: none;
   color: white;
