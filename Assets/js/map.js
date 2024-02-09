@@ -9,8 +9,7 @@ function initMap() {
 
     // New map
     map = new google.maps.Map(document.getElementById("map"), options);
-    console.log(map)
-}
+  }
 
 function searchCity() {
     if (!city) return;

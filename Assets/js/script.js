@@ -34,6 +34,9 @@ $("#search").click(async function () {
                 updateSearchLog();
             }
         }
+    } else {
+        await findCountryInfo(country);
+        updateSearchLog();
     }
     // Fetches the name of 3 cities and their coordinates
     await findCities(countryISO2);
