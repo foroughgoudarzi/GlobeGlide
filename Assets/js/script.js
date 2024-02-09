@@ -71,13 +71,13 @@ $("#search").click(async function () {
 function showExchangeRate() {
 
     //Updates the Exchange rate display text   
-    $("td").eq(0).html("<img id='countryicon' src='./assets/images/imgGBP.png' alt='UK Currency Image'><span> GBP &nbsp; --> &nbsp; </span> ");
+    $("td").eq(0).html("<img id='countryicon' src='./Assets/images/imgGBP.png' alt='UK Currency Image'><span> GBP &nbsp; --> &nbsp; </span> ");
     $("td").eq(1).html(conversionRateGBP + " &nbsp  " + currencyCode);
 
-    $("td").eq(2).html("<img id='countryicon'  src='./assets/images/imgUS.png' alt='US Currency Image'><span> USD &nbsp; -->&nbsp; </span> ");
+    $("td").eq(2).html("<img id='countryicon'  src='./Assets/images/imgUS.png' alt='US Currency Image'><span> USD &nbsp; -->&nbsp; </span> ");
     $("td").eq(3).html(conversionRateUSD + " &nbsp  " + currencyCode);
 
-    $("td").eq(4).html("<img id='countryicon'  src='./assets/images/imgEUR.png'alt='Euro Currency Image'><span> EUR  &nbsp; -->&nbsp; </span>");
+    $("td").eq(4).html("<img id='countryicon'  src='./Assets/images/imgEUR.png'alt='Euro Currency Image'><span> EUR  &nbsp; -->&nbsp; </span>");
     $("td").eq(5).html(conversionRateEUR + " &nbsp " + currencyCode);
 }
 
