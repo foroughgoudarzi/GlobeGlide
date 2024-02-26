@@ -16,7 +16,7 @@ let countryLog = JSON.parse(localStorage.getItem("countries"));
 // Event listener and function for search button
 $("#search").click(async function () {
     country = $("#countryInput").val();
-    $("#country-info").addClass("d-none");
+    $(".exandpoi").addClass("d-none");
     $(".city-photo").addClass("d-none");
     $("#map").addClass("d-none");
 
@@ -57,7 +57,7 @@ $("#search").click(async function () {
     $(".city-photo").removeClass("d-none");
     $("#exchange-rate").removeClass("d-none");
     $(".poi").removeClass("d-none");
-    $("#country-info").removeClass("d-none");
+    $(".exandpoi").removeClass("d-none");
 
     $("#poiselector").addClass("d-none");
     $(".city-name").addClass("d-none");
