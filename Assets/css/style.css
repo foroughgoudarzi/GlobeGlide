@@ -88,8 +88,6 @@ video {
 #map {
   height: 400px;
   width: 95%;
-  position: relative;
-  top: 670px;
   left: 30px;
   padding: 10px;
   margin: 10px;
