@@ -14,7 +14,6 @@
     <title>GlobalGlide</title>
 </head>
 
-
 <body>
 
     <!-- Header -->
@@ -46,24 +45,24 @@
     </div>
 
     <!-- cities -->
-    <div class="ps-0">
+    <div class="ps-0 container-fluid pb-2">
         <div class="images d-flex justify-content-around flex-row flex-wrap mb-2 w-100 pe-0 ">
             <!-- image1 -->
             <div class="city-photo d-none m-2 p-0 text-decoration-none" id="">
-                <div class="card city ">
+                <div class="card city">
                     <img class="card-img-top rounded-3" alt="city-monument">
-                    <div class="card-body">
-                        <h3 class="card-title text-black text-center"></h3>
+                    <div class="card-body p-0">
+                        <h3 class="card-title text-black text-center w-100"></h3>
                         <p class="card-text"></p>
                     </div>
                 </div>
             </div>
             <!-- image2 -->
-            <div class="city-photo d-none m-2 p-0 text-decoration-none " id="">
-                <div class="card city ">
+            <div class="city-photo d-none m-2 p-0 text-decoration-none" id="">
+                <div class="card city">
                     <img class="card-img-top rounded-3" src="" alt="city-monument">
-                    <div class="card-body">
-                        <h3 class="card-title text-black text-center"></h3>
+                    <div class="card-body p-0">
+                        <h3 class="card-title text-black text-center w-100"></h3>
                         <p class="card-text">
                         </p>
                     </div>
@@ -71,10 +70,10 @@
             </div>
             <!-- image3 -->
             <div class="city-photo d-none m-2 p-0 text-decoration-none" id="city-photo">
-                <div class="card city ">
+                <div class="card city">
                     <img class="card-img-top rounded-3" src="" alt="city-monument">
-                    <div class="card-body">
-                        <h3 class="card-title text-black text-center"></h3>
+                    <div class="card-body p-0">
+                        <h3 class="card-title text-black text-center w-100"></h3>
                         <p class="card-text">
                         </p>
                     </div>
@@ -84,57 +83,66 @@
     </div>
 
 
-    <!--city points of interest  and exchange rate-->
-    <div id="country-info" class="row mt-3">
-        <!-- Exchange rate -->
-        <div class="poi d-none col-3 " id="exchange-rate">
-            <h3>Exchange Rate</h3>
-            <table>
-                <tr class="row1">
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="row2">
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="row3">
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <!-- Point of interests -->
-        <div class="d-none col poi poistlye">
-            <h2 class="city-name"></h2>
-            <p id="citydefault">Discover the wonders of your chosen city effortlessly by simply clicking on it. <br>
-                We are here to reveal the hidden gems and must-visit places, ensuring your trip is not only memorable but also stress-free.<br>
-           Let us guide you to create an unforgettable journey filled with remarkable experiences and delightful moments.</p>
+    <!--city points of interest and exchange rate-->
+    <div id="country-info container-fluid" class="row mt-3 mb-3">
+        <div class="exandpoi">
+            <!-- Exchange rate -->
+            <div class="poi d-none" id="exchange-rate">
+                <h3>Exchange Rate</h3>
+                <table>
+                    <tr class="row1">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="row2">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="row3">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
 
-            <div class="row p-0 me-1">
-                <!-- Point of interests selector -->
-                <div class="col-4 poioption">
-                    <select class="poi d-none custom-select custom-select-lg mb-3 me-1" id="poiselector">
-                        <option selected>Select a point of interest</option>
-                        <option>Cinema</option>
-                        <option>Hotel</option>
-                        <option>Coffee</option>
-                        <option>Restaurant</option>
-                        <option>Museum</option>
-                        <option>Map</option>
-                    </select>
+            </div>
 
-                </div>
-                <!-- Point of interest display -->
-                <div class="col poi-address m-2">
+            <!-- Point of interests -->
+            <div class="d-none poi poistlye">
+                <h2 class="city-name"></h2>
+                <p id="citydefault">Discover the wonders of your chosen city effortlessly by simply clicking on it. <br>
+                    We are here to reveal the hidden gems and must-visit places, ensuring your trip is not only
+                    memorable
+                    but
+                    also stress-free.<br>
+                    Let us guide you to create an unforgettable journey filled with remarkable experiences and
+                    delightful
+                    moments.</p>
 
+                <div class="row p-0 me-1 mb-0 container-fluid">
+                    <div class="selectorandpoi">
+                        <!-- Point of interests selector -->
+                        <div class="poioption">
+                            <select Title="Points of Interest"
+                                class="poi d-none custom-select custom-select-lg mb-2 me-1" id="poiselector">
+                                <option selected>Select a point of interest</option>
+                                <option>Cinema</option>
+                                <option>Hotel</option>
+                                <option>Coffee</option>
+                                <option>Restaurant</option>
+                                <option>Museum</option>
+                                <option>Map</option>
+                            </select>
+                        </div>
+                        <!-- Point of interest display -->
+                        <div class="poi-address ms-1 mb-0 p-0">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Airports -->
-    <div class="air"></div>
     <!-- map -->
     <div class="d-none" id="map"></div>
 
@@ -154,11 +162,9 @@
     <script type="text/javascript" src="./Assets/js/script.js"></script>
     <!-- Point of interest, restaurant -->
     <script src="./Assets/js/citiesofcountry.js"></script>
-    <script  src="./Assets/js/currency.js"></script>
-    <script  src="./Assets/js/poi.js"></script>
-    <script  src="./Assets/js/photo.js"></script>
-    <script  src="./Assets/js/map.js"></script>
-    <script  src="./Assets/js/airports.js"></script>
+    <script src="./Assets/js/currency.js"></script>
+    <script src="./Assets/js/poi.js"></script>
+    <script src="./Assets/js/photo.js"></script>
+    <script src="./Assets/js/map.js"></script>
 </body>
-
 </html>
